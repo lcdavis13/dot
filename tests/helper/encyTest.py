@@ -10,3 +10,8 @@ class encyTest(ency):
         self.f = {"x": 0.6}
 
         super().__init__(("dot1", "dot2", "dot3"))
+
+class encyTestSimple(ency):
+    def __init__(self):
+        self.dot1 = {"a": 1, "b": 2}
+        super().__init__(("dot1"))

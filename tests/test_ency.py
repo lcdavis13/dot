@@ -53,21 +53,21 @@ class test_ency(unittest.TestCase):
             self.assertEqual(ef2.dot1["a"], ef.dot1["a"])
             self.assertEqual(ef2.dot1["b"], ef.dot1["b"])
 
-    # def test_readwrite(self):
-    #
-    #         ef = encyTest()
-    #
-    #         js = pickle.dumps(ef)
-    #         ef2 = pickle.loads(js)
-    #
-    #         self.assertEqual(ef2.dot1["a"], ef.dot1["a"])
-    #         self.assertEqual(ef2.dot1["b"], ef.dot1["b"])
-    #         self.assertEqual(ef2.dot2["c"], ef.dot2["c"])
-    #         self.assertEqual(ef2.dot2["e"], ef.dot2["e"])
-    #         self.assertEqual(ef2.dot2["f"]["y"], ef.dot2["f"]["y"])
-    #         self.assertEqual(ef2.dot3["d"], ef.dot3["d"])
-    #         self.assertEqual(ef2.dot3["e"], ef.dot3["e"])
-    #         self.assertEqual(ef2.dot3["f"]["z"], ef.dot3["f"]["z"])
+    def test_readwrite(self):
+
+            ef = encyTest()
+
+            js = pickle.dumps(ef)
+            ef2 = pickle.loads(js)
+
+            self.assertEqual(ef2.dot1["a"], ef.dot1["a"])
+            self.assertEqual(ef2.dot1["b"], ef.dot1["b"])
+            self.assertEqual(ef2.dot2["c"], ef.dot2["c"])
+            self.assertEqual(ef2.dot2["e"], ef.dot2["e"])
+            self.assertEqual(ef2.dot2["f"]["y"], ef.dot2["f"]["y"])
+            self.assertEqual(ef2.dot3["d"], ef.dot3["d"])
+            self.assertEqual(ef2.dot3["e"], ef.dot3["e"])
+            self.assertEqual(ef2.dot3["f"]["z"], ef.dot3["f"]["z"])
 
 
 if __name__ == '__main__':

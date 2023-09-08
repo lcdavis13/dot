@@ -1,5 +1,5 @@
-from dicy import dicy
 
+from dot.dicy import dicy
 
 class ency():
     """

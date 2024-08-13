@@ -5,7 +5,7 @@ setup(
     version="0.1.0",  
     author="Levi Davis",
     author_email="levi.davis.co@gmail.com",
-    description="dot-accessible dictionaries (dicy) and dictionary-containing classes (ency)",
+    description="dot-accessible dictionaries (dicy) and dictionary-containing encyclopedia classes (ency)",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/lcdavis13/dot", 

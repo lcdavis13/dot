@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="dot", 
+    name="dotsy", 
     version="0.1.0",  
     author="Levi Davis",
     author_email="levi.davis.co@gmail.com",

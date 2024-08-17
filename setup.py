@@ -8,7 +8,7 @@ setup(
     description="dot-accessible dictionaries (dicy) and dictionary-containing encyclopedia classes (ency)",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/lcdavis13/dot", 
+    url="https://github.com/lcdavis13/dotsy", 
     packages=find_packages(), 
     classifiers=[
         "Programming Language :: Python :: 3", 

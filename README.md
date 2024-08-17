@@ -19,7 +19,16 @@ Features:
 
 > pip install dotsy
 
-# Usage
+# example usage
 
-> from dotsy import dicy, ency
+> from dotsy import dicy
+> 
+> dd = dicy({"a": 1})
+> print(dd.a) # prints 1
+> 
+> dd.b = 2
+> print(dd["b"]) # prints 2
+> 
+> dd.c = dicy({"i": 3})
+> print(dd.c.i) # prints 3
 

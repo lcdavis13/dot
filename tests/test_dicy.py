@@ -1,10 +1,10 @@
 import unittest
-from dot.dicy import dicy
+from dotsy import Dicy
 import pickle
 
 class test_dicy(unittest.TestCase):
     def test(self):
-        d = dicy()
+        d = Dicy()
         with self.assertRaises(AttributeError):
             d.a
             
@@ -27,10 +27,10 @@ class test_dicy(unittest.TestCase):
 
 
     def test_readwrite(self):
-        d = dicy()
+        d = Dicy()
         d.a = 1
         d.b = 2
-        d.c = dicy()
+        d.c = Dicy()
         d.c.d = 3
 
         s = pickle.dumps(d)

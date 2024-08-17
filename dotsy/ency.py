@@ -1,7 +1,7 @@
 
-from dot.dicy import dicy
+from dotsy import dicy
 
-class ency():
+class Ency():
     """
     'Encyclopedia' of dicts/dictos whose items can be directly dot-accessed on this object. Can have any members and
     methods, but the dictos (or dicts) that are to be dot-accessed must have their names passed in to the

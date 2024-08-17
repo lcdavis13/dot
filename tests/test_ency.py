@@ -1,7 +1,5 @@
 import pickle
 import unittest
-from dot.dicy import dicy
-from dot.ency import ency
 from .helper.encyTest import encyTest, encyTestSimple
 
 class test_ency(unittest.TestCase):

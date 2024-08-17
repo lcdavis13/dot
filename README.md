@@ -13,3 +13,13 @@ Features:
 
 *: Key creation can be dot-accessed for `dicy`. In `ency`, dot-create adds a new class attribute, as is standard in python. 
 **: Auto-complete is tested in pycharm but others should work.
+
+
+# Installation
+
+> pip install dotsy
+
+# Usage
+
+> from dotsy import dicy, ency
+

@@ -1,4 +1,4 @@
-class dicy(dict):
+class Dicy(dict):
     """Dictionary which allows dot access of its items"""
     
     def __getattr__(self, name):
@@ -20,3 +20,8 @@ class dicy(dict):
     def __dir__(self):
         return list(self.__dict__.keys()) + list(self.keys())
 
+
+if __name__ == "__main__":
+    a = Dicy({"a": 1, "b": 2})
+    print(a.a)
+    print(a.b)

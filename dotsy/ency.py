@@ -3,18 +3,18 @@ from dotsy import dicy
 
 class Ency():
     """
-    'Encyclopedia' of dicts/dictos whose items can be directly dot-accessed on this object. Can have any members and
-    methods, but the dictos (or dicts) that are to be dot-accessed must have their names passed in to the
+    'Encyclopedia' of dicts/dicys whose items can be directly dot-accessed on this object. Can have any members and
+    methods, but the dicys (or dicts) that are to be dot-accessed must have their names passed in to the
     super() constructor, after being assigned to member variables with those names.
     """
     
-    def __init__(self, dicto_names):  # Must be called AFTER all the dictos are initialized
-        self.__dicto_names__ = dicto_names
+    def __init__(self, dict_names):  # Must be called AFTER all the dicts/dicys are initialized
+        self.__dict_names__ = dict_names
         self.__initialized__ = True
     
     def __getattr__(self, name):
         def wrap(x):
-            return x  # return dicto(x) if type(x) is dict else x # Removed: autoconversion to dicto causes a copy, preventing write access
+            return x  # return Dicy(x) if type(x) is dict else x # Removed: autoconversion to dicy causes a copy, preventing write access
 
         # print(f"Get: {name}")
         if name == "__initialized__":  # Only reached if the variable wasn't defined yet, so we know the answer
@@ -22,7 +22,7 @@ class Ency():
         if name in self.__dict__.keys():
             return wrap(super().__getattribute__(name))
         
-        for dn in self.__dicto_names__:
+        for dn in self.__dict_names__:
             d = super().__getattribute__(dn)
             if name in d:
                 return wrap(d[name])
@@ -30,11 +30,11 @@ class Ency():
         # If reaching this point, couldn't be found
         raise AttributeError("No such attribute: " + name)
     
-    # Removed: autoconversion to dicto causes a copy, preventing write access
+    # Removed: autoconversion to dicy causes a copy, preventing write access
     # def __getattribute__(self, name):
     #     x = super().__getattribute__(name)
     #     if name != "__dict__" and type(x) is dict:
-    #         x = dicto(x)
+    #         x = Dicy(x)
     #     return x
     
     def __setattr__(self, name, value):
@@ -43,7 +43,7 @@ class Ency():
             super().__setattr__(name, value)
             return
         
-        for dn in self.__dicto_names__:
+        for dn in self.__dict_names__:
             d = super().__getattribute__(dn)
             if name in d:
                 d[name] = value
@@ -54,17 +54,17 @@ class Ency():
     
     def __delattr__(self, name):
         # print(f"Del: {name}")
-        if name in ("__initialized__", "__dicto_names__"):
+        if name in ("__initialized__", "__dict_names__"):
             raise AttributeError("Cannot delete attribute: " + name)
         if name in self.__dict__.keys():
             # print("deleting attribute")
             super().__delattr__(name)
             return
         
-        for dn in self.__dicto_names__:
+        for dn in self.__dict_names__:
             d = super().__getattribute__(dn)
             if name in d:
-                # print("deleting from dicto")
+                # print("deleting from dict")
                 del d[name]
                 return
         
@@ -73,7 +73,7 @@ class Ency():
     
     def __dir__(self):
         attribs = list(self.__dict__.keys())
-        for dn in self.__dicto_names__:
+        for dn in self.__dict_names__:
             d = super().__getattribute__(dn)
             attribs += list(d.keys())
         return attribs
@@ -88,9 +88,9 @@ class Ency():
 
 
 # class custom_dotcontainer_example():
-#     def __init__(self, dict1: dicto = None, dict2: dict = None):
+#     def __init__(self, dict1: Dicy = None, dict2: Dicy = None):
 #         if dict1 is None:
-#             dict1 = dicto()
+#             dict1 = Dicy()
 #         if dict2 is None:
 #             dict2 = {}
 #

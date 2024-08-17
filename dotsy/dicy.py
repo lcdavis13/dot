@@ -4,7 +4,7 @@ class Dicy(dict):
     def __getattr__(self, name):
         if name in self:
             value = self[name]
-            return value # dicto(value) if type(value) is dict else value # Removed: autoconversion to dicto causes a copy, preventing write access
+            return value # Dicy(value) if type(value) is dict else value # Removed: autoconversion to dicy causes a copy, preventing write access
         else:
             raise AttributeError("No such attribute: " + name)
     

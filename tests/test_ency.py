@@ -10,23 +10,23 @@ class test_ency(unittest.TestCase):
             
     def test_readwriteSimple(self):
 
-            ef = encyTestSimple()
+        ef = encyTestSimple()
 
-            js = pickle.dumps(ef)
-            ef2 = pickle.loads(js)
+        js = pickle.dumps(ef)
+        ef2 = pickle.loads(js)
 
-            self.assertEqual(ef2.dot1["a"], ef.dot1["a"])
-            self.assertEqual(ef2.dot1["b"], ef.dot1["b"])
+        self.assertEqual(ef2.dot1["a"], ef.dot1["a"])
+        self.assertEqual(ef2.dot1["b"], ef.dot1["b"])
 
     def test_readwrite(self):
 
-            ef = encyTest()
+        ef = encyTest()
 
-            js = pickle.dumps(ef)
-            ef2 = pickle.loads(js)
+        js = pickle.dumps(ef)
+        ef2 = pickle.loads(js)
 
-            ef.selfTest(self)
-            ef2.selfTest(self)
+        ef.selfTest(self)
+        ef2.selfTest(self)
 
 
 if __name__ == '__main__':
